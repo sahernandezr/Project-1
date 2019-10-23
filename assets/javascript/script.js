@@ -1,15 +1,18 @@
 $( document ).ready(function() {
-    // Date picker Materialize
+    // Materialize Date Picker script
     $('.datepicker').datepicker();
-    //Time Picker Materialize
+    // Materialize Time Picker script
     $('.timepicker').timepicker();
 
-    var date = $(".datepicker");
 
-    var time = $(".timepicker");
+    // Date&Time Snap
+    $(".datepicker").on("change", function() {
+        var date = $(".datepicker").val();
+        console.log("Date: " + date);
+    })
 
-    console.log("Date: " + date);
-    console.log("Time: " + time);
-    
-
+    $(".timepicker").on("change", function() {
+        var time = $(".timepicker").val();
+        console.log("Time: " + time);
+    })
 });
