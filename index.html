@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date Planner</title>
+
+    <!-- Provisional Style:-->
+    <style>
+       header{
+        width: 100%;
+        background-color: beige;
+        height: 100px;
+        display: block;
+       }
+       header::after{
+        content: "";
+        clear: both;
+        display: table;
+       }
+        #logo{
+           height: 80px; 
+           margin: 10px 10px auto 30px; 
+           display: inline;
+        }
+        #weather-div{
+            display: inline;
+            background-color: blue;
+            width: 500px;
+            text-align: center;
+            padding: 0px 0px 40px 0px;
+        }
+    
+        #nav-bar-list{
+            margin: 5px 30px 0px 0px;
+            display: inline;
+            list-style-type: none;
+            float: right;
+        }
+        #nav-bar-list li{
+            display: inline;
+            margin: 0px 30px 0px 0px;
+        }
+        #main-div{
+            margin: 50px 0px 0px 0px;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- This is the header: -->
+    <header>
+
+        <!-- This image contains the project's logo: -->
+        <img src="assets/images/logo.png" alt="logo" id="logo">
+
+        <!-- This div contains the weather once the city and date are chosen: -->
+        <div id="weather-div"><b>"The weather forecast goes here"</b></div>
+        
+        <!-- This div contains the navbar list -->
+        <nav >
+            <ul id="nav-bar-list">
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- This is the main div: -->
+    <div id="main-div">
+
+        <!-- This is the initial input form: -->
+        <form action="submit">
+
+            <label for="date">Choose a date:</label>
+            <input type="date" name="date" id="choose-date-selection">
+            <br>
+
+            <label for="city">Choose your city</label>
+            <select name="city" id="choose-city-selection">
+                    <option value="choose">Choose a city</option>                
+                    <option value="Aguascalientes">Aguascalientes</option>
+                    <option value="Campeche">Campeche</option>
+                    <option value="Cancún">Cancún</option>
+                    <option value="Chetumal">Chetumal</option>
+                    <option value="Chihuahua">Chihuahua</option>
+                    <option value="Chilpancigo">Chilpancigo</option>
+                    <option value="Ciudad de México">Ciudad de México</option>
+                    <option value="Ciudad Victoria">Ciudad Victoria</option>
+                    <option value="Coatzacoalcos">Coatzacoalcos</option>
+                    <option value="Cuernavaca">Cuernavaca</option>
+                    <option value="Culiacán">Culiacán</option>
+                    <option value="Durango">Durango</option>
+                    <option value="Guadalajara">Guadalajara</option>
+                    <option value="Guanajuato">Guanajuato</option>
+                    <option value="Hermosillo">Hermosillo</option>
+                    <option value="León">León</option>
+                    <option value="Mérida">Mérida</option>
+                    <option value="Monterrey">Monterrey</option>
+                    <option value="Morelia">Morelia</option>
+                    <option value="Nuevo Laredo">Nuevo Laredo</option>
+                    <option value="Oaxaca">Oaxaca</option>
+                    <option value="Pachuca">Pachuca</option>
+                    <option value="Poza Rica">Poza Rica</option>
+                    <option value="Puebla">Puebla</option>
+                    <option value="Puebla">Puebla</option>
+                    <option value="Puerto Escondido">Puerto Escondido</option>
+                    <option value="Reynosa">Reynosa</option>
+                    <option value="Saltillo">Saltillo</option>
+                    <option value="San Luis Potosí">San Luis Potosí</option>
+                    <option value="Tampico">Tampico</option>
+                    <option value="Tapachula">Tapachula</option>
+                    <option value="Tijuana">Tijuana</option>
+                    <option value="Tlaxcala">Tlaxcala</option>
+                    <option value="Torreón">Torreón</option>
+                    <option value="Tuxtla Gutierrez">Tuxtla Gutierrez</option>
+                    <option value="Veracruz">Veracruz</option>
+                    <option value="Villahermosa">Villahermosa</option>
+                    <option value="Zacatecas">Zacatecas</option>
+            </select>
+            <br>
+
+            <label for="type-date">Choose type of date:</label>
+            <select name="date-type" id="date-type-selection">
+                    <option value="Choose-type-date">Choose a date type</option>                
+                    <option value="Indoors">Indoors</option>
+                    <option value="Outdoors">Outdoors</option>
+            </select>
+            <br>
+
+            <input type="submit" name="Submit">
+         </form>
+
+
+
+    </div>
+
+
+
+
+
+<!-- This is the footer: -->
+<footer>
+    <b>"Team's name goes here"</b> - Project 1 <br>
+    &copy; Copyright
+</footer>
+</body>
+</html>
