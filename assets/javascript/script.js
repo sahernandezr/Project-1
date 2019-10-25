@@ -29,6 +29,9 @@ $( document ).ready(function() {
         // Checkbox blocked if other selected
     $(".indoor").on("change", function() {
 
+        var indoor = $(".indoor").val();
+        console.log("Indoor: " + indoor);
+
         if ($(".outdoor").attr("disabled") === undefined) {
             $(".outdoor").attr("disabled", true);
         }
@@ -39,6 +42,9 @@ $( document ).ready(function() {
     });
 
     $(".outdoor").on("change", function() {
+
+        var outdoor = $(".outdoor").val();
+        console.log("Outdoor: " + outdoor);
 
         if ($(".indoor").attr("disabled") === undefined) {
             $(".indoor").attr("disabled", true);
