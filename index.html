@@ -4,149 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Date Planner</title>
+=======
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Provisional Style:-->
-    <style>
-       header{
-        width: 100%;
-        background-color: beige;
-        height: 100px;
-        display: block;
-       }
-       header::after{
-        content: "";
-        clear: both;
-        display: table;
-       }
-        #logo{
-           height: 80px; 
-           margin: 10px 10px auto 30px; 
-           display: inline;
-        }
-        #weather-div{
-            display: inline;
-            background-color: blue;
-            width: 500px;
-            text-align: center;
-            padding: 0px 0px 40px 0px;
-        }
-    
-        #nav-bar-list{
-            margin: 5px 30px 0px 0px;
-            display: inline;
-            list-style-type: none;
-            float: right;
-        }
-        #nav-bar-list li{
-            display: inline;
-            margin: 0px 30px 0px 0px;
-        }
-        #main-div{
-            margin: 50px 0px 0px 0px;
-        }
-    </style>
+    <!-- Compiled and minified JavaScript/ Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- Font Awsome -->
+    <script src="https://kit.fontawesome.com/567f3f1abf.js" crossorigin="anonymous"></script>
 
+                
+
+    <title>Project One</title>
 </head>
 <body>
-    <!-- This is the header: -->
-    <header>
+        <!-- Navbar -->
+        <nav class="white" role="navigation">
+                <div class="nav-wrapper container">
+                  <a id="logo-container" href="#" class="brand-logo center"><i class="fas fa-laptop-code"></i></a>
+                  <ul class="right hide-on-med-and-down">
+                    <li><a href="#">Navbar Link</a></li>
+                  </ul>
+            
+                  <ul id="nav-mobile" class="sidenav">
+                    <li><a href="#">Navbar Link</a></li>
+                  </ul>
+                  <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                </div>
+              </nav>
+            
+              <div id="index-banner" class="parallax-container">
+                <div class="section no-pad-bot">
+                  <div class="container">
+                    <br><br>
+                    <h1 class="header center teal-text text-lighten-2">Plan Your Best Date</h1>
+                    <div class="row center">
+                      <h5 class="header col s12 light">The night (or day) of your life is a few clicks away!</h5>
+                    </div>
+                    <div class="row center">
+                      <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+                    </div>
+                    <br><br>
+            
+                  </div>
+                </div>
+                <div class="parallax"><img src="assets/images/parns1.jpg" alt="Unsplashed background img 1"></div>
+              </div>
+            
+            
+              <div class="container">
+                <div class="section">
+                    <div class="row">
+            
+                  <!--   Icon Section   -->
 
-        <!-- This image contains the project's logo: -->
-        <img src="assets/images/logo.png" alt="logo" id="logo">
+                <!-- Choose your Date -->
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons">insert_invitation</i></h2>
+                        <h5 class="center">Date and Time</h5>
+                        <input type="text" class="datepicker" placeholder="Choose Date">
+                        <input type="text" class="timepicker" placeholder="Choose Time">
+                    </div>
+                </div>
 
-        <!-- This div contains the weather once the city and date are chosen: -->
-        <div id="weather-div"><b>"The weather forecast goes here"</b></div>
-        
-        <!-- This div contains the navbar list -->
-        <nav >
-            <ul id="nav-bar-list">
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-            </ul>
-        </nav>
+                <!-- Choose your City -->
+                  
+                    <div class="col s12 m4 center-align">
+                      <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons">location_city</i></h2>
+                        <h5 class="center">Choose Your City!</h5>
+                        <select class="browser-default input-field locs">
+                                <option value="choose" disabled selected>Choose a city</option>                
+                                <option value="Mexico">México</option>>
+                                <option value="Guadalajara">Guadalajara</option>>
+                                <option value="Monterrey">Monterrey</option>>
+                        </select>
+                       </div>
+                    
 
-    </header>
+                <!-- Submit Button -->
+                    <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                    </div>
+            
+                <!-- Indoors or Outdoors-->
+                    <div class="col s12 m4">
+                      <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons">home / local_bar</i></h2>
+                        <h5 class="center">Preference</h5>
+            
+                        <p class="light">Would you prefer an Outdoors or Indoors date?</p>
+                        <p>
+                          <!-- Checkbox -->
+                            <label>
+                                <input id="indeterminate-checkbox" class="indoor" type="checkbox" />
+                                <span>Indoors</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input id="indeterminate-checkbox" class="outdoor" type="checkbox" />
+                                <span>Outdoors</span>
+                            </label>
+                        </p>
+                      </div>
+                    </div>
+                
+                  </div>
+            
+                </div>
+              </div>
 
-
-    <!-- This is the main div: -->
-    <div id="main-div">
-
-        <!-- This is the initial input form: -->
-        <form action="submit">
-
-            <label for="date">Choose a date:</label>
-            <input type="date" name="date" id="choose-date-selection">
-            <br>
-
-            <label for="city">Choose your city</label>
-            <select name="city" id="choose-city-selection">
-                    <option value="choose">Choose a city</option>                
-                    <option value="Aguascalientes">Aguascalientes</option>
-                    <option value="Campeche">Campeche</option>
-                    <option value="Cancún">Cancún</option>
-                    <option value="Chetumal">Chetumal</option>
-                    <option value="Chihuahua">Chihuahua</option>
-                    <option value="Chilpancigo">Chilpancigo</option>
-                    <option value="Ciudad de México">Ciudad de México</option>
-                    <option value="Ciudad Victoria">Ciudad Victoria</option>
-                    <option value="Coatzacoalcos">Coatzacoalcos</option>
-                    <option value="Cuernavaca">Cuernavaca</option>
-                    <option value="Culiacán">Culiacán</option>
-                    <option value="Durango">Durango</option>
-                    <option value="Guadalajara">Guadalajara</option>
-                    <option value="Guanajuato">Guanajuato</option>
-                    <option value="Hermosillo">Hermosillo</option>
-                    <option value="León">León</option>
-                    <option value="Mérida">Mérida</option>
-                    <option value="Monterrey">Monterrey</option>
-                    <option value="Morelia">Morelia</option>
-                    <option value="Nuevo Laredo">Nuevo Laredo</option>
-                    <option value="Oaxaca">Oaxaca</option>
-                    <option value="Pachuca">Pachuca</option>
-                    <option value="Poza Rica">Poza Rica</option>
-                    <option value="Puebla">Puebla</option>
-                    <option value="Puebla">Puebla</option>
-                    <option value="Puerto Escondido">Puerto Escondido</option>
-                    <option value="Reynosa">Reynosa</option>
-                    <option value="Saltillo">Saltillo</option>
-                    <option value="San Luis Potosí">San Luis Potosí</option>
-                    <option value="Tampico">Tampico</option>
-                    <option value="Tapachula">Tapachula</option>
-                    <option value="Tijuana">Tijuana</option>
-                    <option value="Tlaxcala">Tlaxcala</option>
-                    <option value="Torreón">Torreón</option>
-                    <option value="Tuxtla Gutierrez">Tuxtla Gutierrez</option>
-                    <option value="Veracruz">Veracruz</option>
-                    <option value="Villahermosa">Villahermosa</option>
-                    <option value="Zacatecas">Zacatecas</option>
-            </select>
-            <br>
-
-            <label for="type-date">Choose type of date:</label>
-            <select name="date-type" id="date-type-selection">
-                    <option value="Choose-type-date">Choose a date type</option>                
-                    <option value="Indoors">Indoors</option>
-                    <option value="Outdoors">Outdoors</option>
-            </select>
-            <br>
-
-            <input type="submit" name="Submit">
-         </form>
-
-
-
-    </div>
-
-
-
-
-
-<!-- This is the footer: -->
-<footer>
-    <b>"Team's name goes here"</b> - Project 1 <br>
-    &copy; Copyright
-</footer>
+              <div class="parallax-container valign-wrapper">
+                <div class="section no-pad-bot">
+                  <div class="container">
+                    <div class="row center">
+                      <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="parallax"><img src="assets/images/indoor1.jpg" alt="Unsplashed background img 3"></div>
+              </div>
+            
+              <footer class="page-footer teal">
+                <div class="container">
+                  <div class="row">
+                    <div class="col l6 s12">
+                      <h5 class="white-text">Company Bio</h5>
+                      <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+            
+            
+                    </div>
+                    <div class="col l3 s12">
+                      <h5 class="white-text">Settings</h5>
+                      <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                      </ul>
+                    </div>
+                    <div class="col l3 s12">
+                      <h5 class="white-text">Connect</h5>
+                      <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-copyright">
+                  <div class="container">
+                  Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                  </div>
+                </div>
+              </footer>
+    <!-- Jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <!--  Scripts-->
+    <script src="assets/js/materialize.js"></script>
+    <script src="assets/js/init.js"></script>
+    <!-- Javascript -->
+    <script src="assets/javascript/script.js"></script>
+>>>>>>> f5efd22fa36cea144748c656b471d5e748c05418
 </body>
 </html>
