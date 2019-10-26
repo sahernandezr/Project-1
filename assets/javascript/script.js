@@ -1,4 +1,11 @@
 $( document ).ready(function() {
+
+    // Global Variables
+
+    var gOutdoor = false;
+
+    var gIndoor = false;
+
     // Materialize Date Picker script
     $('.datepicker').datepicker();
     // Materialize Time Picker script
@@ -34,6 +41,7 @@ $( document ).ready(function() {
 
         if ($(".outdoor").attr("disabled") === undefined) {
             $(".outdoor").attr("disabled", true);
+            gOutdoor = true;
         }
 
         else if ($(".outdoor").attr("disabled") === "disabled") {
@@ -48,11 +56,32 @@ $( document ).ready(function() {
 
         if ($(".indoor").attr("disabled") === undefined) {
             $(".indoor").attr("disabled", true);
+            gIndoor = true;
         }
         
         else if ($(".indoor").attr("disabled") === "disabled") {
             $(".indoor").removeAttr("disabled");
         }   
+    });
+
+        // SubmitBtn Function
+    $(".submitBtn").on("click", function (){
+        // Clear Content below 1st banner
+        $(".contnt").empty();
+        // Image banner1 swap
+        if (gIndoor === false) {
+            $(".banner1").attr("src","assets/images/netflix.jpg");
+        }
+
+        else {
+            $(".banner1").attr("src","assets/images/couple.jpg");
+        }
+
+        var newDiv = $("<div>");
+        newDiv.attr("class","row card-holder-row");
+        $(".contnt").append(newDiv);
+        
+
     });
 
 
