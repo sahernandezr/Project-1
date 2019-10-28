@@ -29,6 +29,13 @@ p {
     width: 100%;
   }
 
+.card {
+  width: 20% !important;
+  display: inline-block !important;
+  padding: 0 15px;
+  border: 0;
+}
+
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;

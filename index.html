@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-=======
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -25,15 +24,15 @@
         <!-- Navbar -->
         <nav class="white" role="navigation">
                 <div class="nav-wrapper container">
-                  <a id="logo-container" href="#" class="brand-logo center"><i class="fas fa-laptop-code"></i></a>
+                  <a id="logo-container" href="index.html" class="brand-logo center"><i class="fas fa-laptop-code"></i></a>
                   <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Navbar Link</a></li>
+                    <li><a href="#">Home</a></li>
                   </ul>
             
                   <ul id="nav-mobile" class="sidenav">
-                    <li><a href="#">Navbar Link</a></li>
+                    <li><a href="#">Home</a></li>
                   </ul>
-                  <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                  <a href="index.html" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 </div>
               </nav>
             
@@ -41,22 +40,22 @@
                 <div class="section no-pad-bot">
                   <div class="container">
                     <br><br>
-                    <h1 class="header center teal-text text-lighten-2">Plan Your Best Date</h1>
+                    <h1 class="header center teal-text text-lighten-2"></h1>
                     <div class="row center">
-                      <h5 class="header col s12 light">The night (or day) of your life is a few clicks away!</h5>
+                      <h5 class="header col s12 light"></h5>
                     </div>
                     <div class="row center">
-                      <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+                      
                     </div>
                     <br><br>
             
                   </div>
                 </div>
-                <div class="parallax"><img src="assets/images/parns1.jpg" alt="Unsplashed background img 1"></div>
+                <div class="parallax"><img src="assets/images/parns1.jpg" class="banner1" alt="Unsplashed background img 1"></div>
               </div>
             
-            
-              <div class="container">
+            <!-- Container Clear from here -->
+              <div class="container contnt"> <!-- This is not deleted on clear -->
                 <div class="section">
                     <div class="row">
             
@@ -67,8 +66,8 @@
                     <div class="icon-block">
                         <h2 class="center brown-text"><i class="material-icons">insert_invitation</i></h2>
                         <h5 class="center">Date and Time</h5>
-                        <input type="text" class="datepicker" placeholder="Choose Date">
-                        <input type="text" class="timepicker" placeholder="Choose Time">
+                        <input type="text" class="datepicker" id="date-day" placeholder="Choose Date">
+                        <input type="text" class="timepicker" id="date-time" placeholder="Choose Time">
                     </div>
                 </div>
 
@@ -78,9 +77,9 @@
                       <div class="icon-block">
                         <h2 class="center brown-text"><i class="material-icons">location_city</i></h2>
                         <h5 class="center">Choose Your City!</h5>
-                        <select class="browser-default input-field locs">
+                        <select class="browser-default input-field locs" id="date-city">
                                 <option value="choose" disabled selected>Choose a city</option>                
-                                <option value="Mexico">México</option>>
+                                <option value="Mexico">Mexico</option>>
                                 <option value="Guadalajara">Guadalajara</option>>
                                 <option value="Monterrey">Monterrey</option>>
                         </select>
@@ -88,7 +87,7 @@
                     
 
                 <!-- Submit Button -->
-                    <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit
+                    <button class="btn waves-effect waves-light submitBtn" id="submit-one" type="submit" name="action">Submit
                         <i class="material-icons right">send</i>
                     </button>
                     </div>
@@ -119,6 +118,15 @@
                   </div>
             
                 </div>
+              </div>
+
+              <!-- API DIVS GO DOWN HERE INSIDE THE HIDE DIV -->
+              <div class="hide">
+                <!-- TICKETMASTER GOES HERE -->
+              </div>
+
+              <div class="hide">
+                <!-- NETFLIX GOES HERE -->
               </div>
 
               <div class="parallax-container valign-wrapper">
@@ -174,6 +182,5 @@
     <script src="assets/js/init.js"></script>
     <!-- Javascript -->
     <script src="assets/javascript/script.js"></script>
->>>>>>> f5efd22fa36cea144748c656b471d5e748c05418
 </body>
 </html>

@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Indoor date</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript/ Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- Font Awsome -->
+    <script src="https://kit.fontawesome.com/567f3f1abf.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -41,27 +51,42 @@
         </p>
     </div>
 
-    <p>Do you have a favorite actor or kewyword you'd like to include?</p>
-
-    <p>
-        <input type="text" id="actor">
-    </p>
-
-    <p>Any particular keyword you'd like to search for?</p>
+    <p>Search for any particular keyword</p>
 
     <p>
         <input type="text" id="keyword">
     </p>
 
+    <p>Do you have a favorite actor you'd like to include? (optional)</p>
+
+    <p>
+        <input type="text" id="actor">
+    </p>
+
+    
+
     <button id="submit-search-movies">Search movies</button>
 
-    <p>These are some suggestions for you:</p>
+    <h6>These are some suggestions for you:</h6>
 
     <div id="results-movies"></div>
 
-    <button>Search again</button>
+    <!-- <div class="card" style="width:180px">
+        <div class="card-image waves-effect waves-block waves-red" style="width:180px">
+          <img class="activator" src="https://occ-0-64-58.1.nflxso.net/dnm/api/v6/XsrytRUxks8BtTRf9HNlZkW2tvY/AAAABfojbH9pcS5sLKV02KkmYQmqNBrxWp57JyOllmohhzr_0qgeBcl-WxcE-blXrIa3kVXHunu3ET4skzGN3Qj6gd5uOw.jpg?r=627" style="width:180px">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">My Youth<i class="material-icons right">more_vert</i></span>
+          <p><a href="https://www.netflix.com/title/81197399" target="_blank">Watch it now</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">My Youth<i class="material-icons right">close</i></span>
+          <p>Six hopeful friends journey into adulthood to create the moments that pull them together, draw them apart and make them fall in love.
+            </p>
+        </div>
+      </div> -->
 
-
+    |
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
