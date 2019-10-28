@@ -1,15 +1,55 @@
 // START OF - ON READY FUNCTION:
 $(function(){
 
-  // START OF - HIDE INDOOR AND OUTDOOR API SECTIONS:
+  // START OF - HIDE INDOOR AND OUTDOOR API SECTIONS AND ABOUT:
   $("#outdoor-section").animate({opacity: 0.0}, 1, function(){
     $(this).hide();
   }); 
+
+  $("#firebase-section").animate({opacity: 0.0}, 1, function(){
+    $(this).hide();
+  }); 
+
+  $("#hide-history-outdoor").animate({opacity: 0.0}, 1, function(){
+    $(this).hide();
+  }); 
+
   $("#indoor-section").animate({opacity: 0.0}, 1, function(){
     $(this).hide();
-  });// END OF - HIDE INDOOR AND OUTDOOR API SECTIONS.
+  });
+
+  $("#hide-about").animate({opacity: 0.0}, 1, function(){
+    $(this).hide();
+  });
+
+  $("#about-div").animate({opacity: 0.0}, 1, function(){
+    $(this).hide();
+  });
+  // END OF - HIDE INDOOR AND OUTDOOR API SECTIONS AND ABOUT.
 
 
+  // START OF - CLICK ON "ABOUT" BUTTON:
+  $("#about").on("click", function(){
+    event.preventDefault();
+    $("#about").hide();
+    $("#hide-about").show().animate({opacity: 100.0}, 1);
+    $("#about-div").show().animate({opacity: 100.0}, 1);
+  });// END OF - CLICK ON "ABOUT" BUTTON.
+
+  // START OF - CLICK ON "HIDE-ABOUT" BUTTON:
+  $("#hide-about").on("click", function(){
+    event.preventDefault();
+    $("#hide-about").hide();
+    $("#about-div").animate({opacity: 0.0}, 1).hide();
+    $("#about").show().animate({opacity: 100.0}, 1);
+  });// END OF - CLICK ON "HIDE-ABOUT" BUTTON.
+
+
+  // START OF - VARIABLES AND FUNCTION FOR FOOTER CURRENT YEAR:
+  var today = new Date();
+  var year = today.getFullYear();
+  $("#current-year-footer").text(year);
+  // END OF - VARIABLES AND FUNCTION FOR FOOTER CURRENT YEAR.
 
 
 // MAIN INPUT SECTION:
@@ -167,9 +207,7 @@ $(function(){
             cardMovie.append("<div><button><a href='https://www.netflix.com/title/"+movieNetflixId+"'target='_blank'>Watch it now</button></div><br>");
             $("#indoorApiContentDiv").append(cardMovie);
           }// END OF - INDOOR AJAX LOOP:
-        
-
-        
+          $("#indoorApiContentDiv").append("<hr>"); 
         }); // END OF - INDOOR API AJAX.
     });// END OF - SUBMIT BUTTON CODE FOR "INDOOR API SECTION":
   // INDOOR DATE SECTION - END.
@@ -177,7 +215,7 @@ $(function(){
 
 
 
-  // OUTDOOR DATE SECTION":
+  // OUTDOOR DATE SECTION:
       // THESE FUNCTIONS INCLUDE TEXT OF DATE AND TIME ON H3 TITLES:
       $("#date-span").text(momentDay);
       $("#time-span").text(momentTime);
@@ -197,6 +235,23 @@ $(function(){
         eventDivOutdoors = $("#outdoorApiContentDiv").empty();
         $("#outdoor-form").get(0).reset();
       });// END OF - OUTDOOR CLICK ON "CLEAR SEARCHES" BUTTON.
+
+      // START OF - OUTDOOR CLICK ON "SHOW HISTORY" BUTTON:
+      $("#show-history-outdoor").on("click", function(){
+        event.preventDefault();
+        $("#firebase-section").show().animate({opacity: 100.0}, 500);
+        $("#hide-history-outdoor").show().animate({opacity: 100.0}, 500);
+        $(this).hide();
+      });// END OF - OUTDOOR CLICK ON "SHOW HISTORY" BUTTON.
+
+      // START OF - OUTDOOR CLICK ON "HIDE HISTORY" BUTTON:
+      $("#hide-history-outdoor").on("click", function(){
+        event.preventDefault();
+        $("#firebase-section").animate({opacity: 0.0}, 500).hide();
+        $("#show-history-outdoor").show().animate({opacity: 100.0}, 500);
+        $(this).hide();
+      });// END OF - OUTDOOR CLICK ON "HIDE HISTORY" BUTTON.
+      
 
       // START OF - SUBMIT BUTTON CODE FOR "OUTDOOR API SECTION":
       $("#submit-outdoor").on("click", function(){
@@ -268,9 +323,10 @@ $(function(){
                   $("#outdoorApiContentDiv").append(eventDivOutdoors); 
 
               }// END OF - LOOP TO ADD "OUTDOOR API SECTION" AJAX RESPONSES.
+              $("#outdoorApiContentDiv").append("<hr>"); 
             });// END OF - "OUTDOOR API SECTION" AJAX.
           }); // END OF - SUBMIT BUTTON CODE FOR "OUTDOOR API SECTION"
-  // OUTDOOR DATE SECTION" - END.
+  // OUTDOOR DATE SECTION - END.
 
 
 
