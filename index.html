@@ -19,214 +19,220 @@
         <!-- This is the "hide about" button: -->
         <input type="submit" id="hide-about" value="hide-about"></input>
         
-        <!-- START OF - DIV THAT CONTAINS "ABOUT" DETAILS: -->
-        <div id="about-div">
-            <!-- This div contains details about float -->
-            <div id="float-div">
-                <h2>About float:</h2>
-                <p>Float helps you plan the perfect date, whether you're looking to set a cozy mood inside or feeling adventurous and want to go out and explore the city!</p>
-            </div>
-
-            <!-- START OF - DIV THAT CONTAINS TEAM'S DETAILS: -->
-            <div id="team-div">
-                <h2>About our team:</h2>
-
-                <!-- Froy -->
-                <div class="team-personal-div">
-                    <img class="team-image" src="assets/images/Team/Froylan.png" alt="Froylan">
-                    <h3>Froylan Pérez</h3>
-                    <p>Froylan is one of our team's outdoor API master planner and coder.</p>
-                </div>
-                <!-- Sandra -->
-                <div class="team-personal-div">
-                    <img class="team-image" src="assets/images/Team/Sandra.png" alt="Sandra">
-                    <h3>Sandra Hernández</h3>
-                    <p>Sandra is our team's indoor API specialist and coder.</p>
-                </div>
-                <!-- Miguel -->
-                <div class="team-personal-div">
-                    <img class="team-image" src="assets/images/Team/Miguel.png" alt="Miguel">
-                    <h3>Miguel Santa María</h3>
-                    <p>Miguel is our user experience interface specialist and coder.</p>
-                </div>
-                <!-- Humberto -->
-                <div class="team-personal-div">
-                    <img class="team-image" src="assets/images/Team/Humberto.png" alt="Humberto">
-                    <h3>Humberto Gómez</h3>
-                    <p>Humberto is one of our team's outdoor API master planner, database specialist and coder.</p>
-                </div>
-            </div><!-- END OF - DIV THAT CONTAINS TEAM'S DETAILS. -->
-            <hr id="hr1">
-        </div> <!-- END OF -DIV THAT CONTAINS "ABOUT" DETAILS. -->
     </nav><!--END OF - NAV BAR: -->
+
     <br>
-
-
-    <!-- MAIN TITLE -->
-    <img src="assets/images/FloatLogo.png" id="main-logo">
-    <h3>Let yourself go and plan a great date!</h3>
-
-    <!-- START OF -  FIRST INPUT SECTION: -->
-        <section id="main-section">
-
-            <form action="submit" id="main-form">
-
-                <!-- Choose your date: -->
-                <label for="date">Choose your date:*</label>
-                <input type="date" name="date" id="date-day">
-                <br>
-
-                <!-- Choose your hour: -->
-                <label for="time">Choose your time:*</label>
-                <input type="time" name="time" id="date-time">
-                <br>
-
-                <!-- Choose of city: -->
-                <label for="cityType">Choose your city:*</label>
-                <select name="cityType" id="date-city">
-                    <option value="choose-one" >Chooose one:</option>                
-                    <option value="402" >Mexico City</option>
-                    <option value="404" >Guadalajara</option>
-                    <option value="403" >Monterrey</option>
-                </select>
-                <br>
-
-                <!-- Choose of event: -->
-                <label for="eventType">Choose your type of outdoor date:*</label>
-                <select name="eventType" id="date-type">
-                    <option value="choose-one" >Chooose one:</option>                
-                    <option value="indoor">indoor</option>
-                    <option value="outdoor">outdoor</option>
-                </select>
-            </form>
-            <br>
-
-            <!-- Input button-one -->
-            <input type="submit" id="submit-one" value="Search">
-            <hr>
-
-        </section>
-    <!-- END OF - FIRST INPUT SECTION -->
-
-
-
-
-    <!-- START OF - INDOOR API SECTION: -->
-        <section id="indoor-section">
-
-            <!-- Back to main page button: -->
-            <input type="submit" id="back-to-main-page-indoor" value="Back to main page">
     
-            <!-- Clear searches button: -->
-            <input type="submit" id="clear-searches-indoor" value="Clear searches"> 
+
+    <!-- START OF OF - HUGE MAIN DIV-->   
+    <div id="huge-main-div">
+        <hr>
+            <!-- MAIN TITLE -->
+            <img src="assets/images/FloatLogo.png" id="main-logo">
+            <h3>Let yourself go and plan a great date!</h3>
+
+            <!-- START OF - DIV THAT CONTAINS "ABOUT" DETAILS: -->
+            <div id="about-div">
             <hr>
+                <!-- This div contains details about float -->
+                <div id="float-div">
+                    <h2>About float:</h2>
+                    <p id="about-float-p">Float helps you plan the perfect date, whether you're feeling cozy and want to stay indoors or adventurous and want to go out and explore the city!</p>
+                </div>
 
-            <h3>So you want to stay indoors...<br>
-                Find a movie to watch and get cosy with that lucky person!</h3>
-  
+                <!-- START OF - DIV THAT CONTAINS TEAM'S DETAILS: -->
+                <div id="team-div">
+                    <h2>About our team:</h2>
 
-            <form action="submit" id="indoor-form">
-
-                <!-- Choose genre of movie to watch: -->
-                <label for="movieGenre">What genre of movie would you like to watch?</label>
-                <select name="movieGenre" id="movie-genre">
-                    <option value="choose-one" >Chooose one:</option>                
-                    <option value="-!5475" genre="comedy" class="movieGenre">Comedy</option>
-                    <option value="-!1255" genre="drama" class="movieGenre">Drama</option>
-                    <option value="-!1365" genre="action" class="movieGenre">Action</option>
-                    <option value="-!8711" genre="horror" class="movieGenre">Horror</option>
-                </select>
-                <br>
-
-                <!-- Enter an actor or director name: -->
-                <label for="">Enter the name of an actor you would like to watch:</label>
-                <input type="text" id="actor"><br>
-
-                <label for="">Enter a keyword for a movie you would like to find:</label>
-                <input type="text" id="keyword"><br>
-
-                <input type="submit" value="Search" id="submit-indoor">
-                <hr>
-
-            </form>
-
-            <!-- Div to append API responses: -->
-            <div id="indoorApiContentDiv"></div>
-
-        </section>
-    <!-- END OF - INDOOR API SECTION-->
+                    <!-- Froy -->
+                    <div class="team-personal-div">
+                        <img class="team-image" src="assets/images/Team/Froylan.png" alt="Froylan">
+                        <h3>Froylan Pérez</h3>
+                        <p>Froylan is one of our team's outdoor API master planner and coder.</p>
+                    </div>
+                    <!-- Sandra -->
+                    <div class="team-personal-div">
+                        <img class="team-image" src="assets/images/Team/Sandra.png" alt="Sandra">
+                        <h3>Sandra Hernández</h3>
+                        <p>Sandra is our team's indoor API specialist and coder.</p>
+                    </div>
+                    <!-- Miguel -->
+                    <div class="team-personal-div">
+                        <img class="team-image" src="assets/images/Team/Miguel.png" alt="Miguel">
+                        <h3>Miguel Santa María</h3>
+                        <p>Miguel is our user experience interface specialist and coder.</p>
+                    </div>
+                    <!-- Humberto -->
+                    <div class="team-personal-div">
+                        <img class="team-image" src="assets/images/Team/Humberto.png" alt="Humberto">
+                        <h3>Humberto Gómez</h3>
+                        <p>Humberto is one of our team's outdoor API master planner, database specialist and coder.</p>
+                    </div>
+                </div><!-- END OF - DIV THAT CONTAINS TEAM'S DETAILS. -->
+                <hr id="hr1">
+            </div> <!-- END OF -DIV THAT CONTAINS "ABOUT" DETAILS. -->
 
 
+            <!-- START OF -  FIRST INPUT SECTION: -->
+                <section id="main-section">
+
+                    <form action="submit" id="main-form">
+
+                        <!-- Choose your date: -->
+                        <label for="date">Choose your date:*</label>
+                        <input type="date" name="date" id="date-day">
+                        <br>
+
+                        <!-- Choose your hour: -->
+                        <label for="time">Choose your time:*</label>
+                        <input type="time" name="time" id="date-time">
+                        <br>
+
+                        <!-- Choose of city: -->
+                        <label for="cityType">Choose your city:*</label>
+                        <select name="cityType" id="date-city">
+                            <option value="choose-one" >Chooose one:</option>                
+                            <option value="402" >Mexico City</option>
+                            <option value="404" >Guadalajara</option>
+                            <option value="403" >Monterrey</option>
+                        </select>
+                        <br>
+
+                        <!-- Choose of event: -->
+                        <label for="eventType">Choose your type of outdoor date:*</label>
+                        <select name="eventType" id="date-type">
+                            <option value="choose-one" >Chooose one:</option>                
+                            <option value="indoor">indoor</option>
+                            <option value="outdoor">outdoor</option>
+                        </select>
+                    </form>
+                    <br>
+
+                    <!-- Input button-one -->
+                    <input type="submit" id="submit-one" value="Search">
+                    <hr>
+
+                </section>
+            <!-- END OF - FIRST INPUT SECTION -->
 
 
-    <!-- START OF - OUTDOOR API SECTION: -->
-        <section id="outdoor-section">
 
-            <!-- Back to main page button: -->
-            <input type="submit" id="back-to-main-page-outdoor" value="Back to main page"> 
+            <!-- START OF - INDOOR API SECTION: -->
+                <section id="indoor-section">
 
-            <!-- Clear searches button: -->
-            <input type="submit" id="clear-searches-outdoor" value="Clear searches"> 
-            <hr>
-
-            <!-- Show history button: -->
-            <input type="submit" id="show-history-outdoor" value="Show history"> 
-
-            <!-- Hide history button: -->
-            <input type="submit" id="hide-history-outdoor" value="Hide history"> 
+                    <!-- Back to main page button: -->
+                    <input type="submit" id="back-to-main-page-indoor" value="Back to main page">
             
-            <!-- START OF - FIREBASE OUTDOOR SECTION: -->
-            <section id="firebase-section" >
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, nisi commodi? Perspiciatis magni accusantium cum ut? Sit quas nostrum aspernatur maiores optio illo ab. Animi a adipisci ex vero nobis nam illum beatae esse excepturi maiores doloremque cum minima repellendus accusantium sit, alias facere tenetur quos accusamus incidunt? Tenetur atque dolorum, consequatur ducimus ab error similique placeat laudantium dignissimos porro ipsa, quaerat sint vitae commodi nihil illum, ullam laboriosam vel. Facere alias voluptatum assumenda ratione! Saepe molestias culpa temporibus officia similique. Quae iure enim placeat nihil incidunt, ipsam vitae molestiae maxime veritatis corrupti voluptatibus quas quo deleniti doloribus aliquam magnam tempora doloremque eius quam laboriosam accusantium? Ut omnis impedit illum, eligendi fugiat minus, accusamus molestiae facere porro deserunt veritatis voluptatem beatae reprehenderit dolorum. Quam incidunt quisquam delectus labore at earum amet corporis cumque harum fugiat aliquam, ad itaque sapiente atque expedita, explicabo necessitatibus facilis exercitationem, blanditiis illo. Ea eveniet quo laboriosam nam distinctio eius quam maiores, quisquam at eaque, corrupti architecto harum, perferendis reprehenderit suscipit sequi sapiente itaque officia aut voluptatibus. Ullam, quasi reiciendis! Dolore ab atque similique sed veniam, laboriosam ut, modi eius dicta aliquid tempore et iste, sint illum quo architecto dolor fugit. Commodi eius consequuntur explicabo eum?</p>
-            </section>
-            <!-- END OF - FIREBASE OUTDOOR SECTION. -->         
-            <hr>
+                    <!-- Clear searches button: -->
+                    <input type="submit" id="clear-searches-indoor" value="Clear searches"> 
+                    <hr>
 
-            <h3>So you want to go out on: <br><span id="date-span"></span> at <span id="time-span"></span>...<br>
-                Find an event to go out with that lucky person!</h3>
+                    <h3>So you want to stay indoors...<br>
+                        Find a movie to watch and get cosy with that lucky person!</h3>
+        
 
-            <!-- Outdoor form: -->
-            <form action="submit" id="outdoor-form">
-                <!-- Choose type of event: -->
-                <label for="eventType">Choose the type of event:</label>
-                <select name="eventType" id="date-event-type">
-                    <option value="choose-one" >Chooose one:</option>                
-                    <option value="KZFzniwnSyZfZ7v7nE" genre="Sports" class="eventTypeClass">Sports</option>
-                    <option value="KZFzniwnSyZfZ7v7nJ" genre="Music" class="eventTypeClass">Music</option>
-                    <option value="KZFzniwnSyZfZ7v7na" genre="Arts & Theater" class="eventTypeClass">Arts & Theater</option>
-                </select>
-                <br>
+                    <form action="submit" id="indoor-form">
 
-                <!-- Number of events displayed: -->
-                <label for="event-number">Choose number options to display:</label>
-                <select name="event-number" id="event-number">  
-                    <option value="1">1</option>                      
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="40">40</option>
-                </select>
-                <br>
-                
+                        <!-- Choose genre of movie to watch: -->
+                        <label for="movieGenre">What genre of movie would you like to watch?</label>
+                        <select name="movieGenre" id="movie-genre">
+                            <option value="choose-one" >Chooose one:</option>                
+                            <option value="-!5475" genre="comedy" class="movieGenre">Comedy</option>
+                            <option value="-!1255" genre="drama" class="movieGenre">Drama</option>
+                            <option value="-!1365" genre="action" class="movieGenre">Action</option>
+                            <option value="-!8711" genre="horror" class="movieGenre">Horror</option>
+                        </select>
+                        <br>
 
-                <input type="submit" id="submit-outdoor" value="Search">
-            </form>
-            <hr>
+                        <!-- Enter an actor or director name: -->
+                        <label for="">Enter the name of an actor you would like to watch:</label>
+                        <input type="text" id="actor"><br>
 
-            <!-- Div to append API responses: -->
-            <div id="outdoorApiContentDiv"></div>
+                        <label for="">Enter a keyword for a movie you would like to find:</label>
+                        <input type="text" id="keyword"><br>
+
+                        <input type="submit" value="Search" id="submit-indoor">
+                        <hr>
+
+                    </form>
+
+                    <!-- Div to append API responses: -->
+                    <div id="indoorApiContentDiv"></div>
+
+                </section>
+            <!-- END OF - INDOOR API SECTION-->
 
 
-        </section>
-    <!-- END OF - OUTDOOR API SECTION-->
+
+
+            <!-- START OF - OUTDOOR API SECTION: -->
+                <section id="outdoor-section">
+
+                    <!-- Back to main page button: -->
+                    <input type="submit" id="back-to-main-page-outdoor" value="Back to main page"> 
+
+                    <!-- Clear searches button: -->
+                    <input type="submit" id="clear-searches-outdoor" value="Clear searches"> 
+                    <hr>
+
+                    <!-- Show history button: -->
+                    <input type="submit" id="show-history-outdoor" value="Show history"> 
+
+                    <!-- Hide history button: -->
+                    <input type="submit" id="hide-history-outdoor" value="Hide history"> 
+                    
+                    <!-- START OF - FIREBASE OUTDOOR SECTION: -->
+                    <section id="firebase-section" >
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, nisi commodi? Perspiciatis magni accusantium cum ut? Sit quas nostrum aspernatur maiores optio illo ab. Animi a adipisci ex vero nobis nam illum beatae esse excepturi maiores doloremque cum minima repellendus accusantium sit, alias facere tenetur quos accusamus incidunt? Tenetur atque dolorum, consequatur ducimus ab error similique placeat laudantium dignissimos porro ipsa, quaerat sint vitae commodi nihil illum, ullam laboriosam vel. Facere alias voluptatum assumenda ratione! Saepe molestias culpa temporibus officia similique. Quae iure enim placeat nihil incidunt, ipsam vitae molestiae maxime veritatis corrupti voluptatibus quas quo deleniti doloribus aliquam magnam tempora doloremque eius quam laboriosam accusantium? Ut omnis impedit illum, eligendi fugiat minus, accusamus molestiae facere porro deserunt veritatis voluptatem beatae reprehenderit dolorum. Quam incidunt quisquam delectus labore at earum amet corporis cumque harum fugiat aliquam, ad itaque sapiente atque expedita, explicabo necessitatibus facilis exercitationem, blanditiis illo. Ea eveniet quo laboriosam nam distinctio eius quam maiores, quisquam at eaque, corrupti architecto harum, perferendis reprehenderit suscipit sequi sapiente itaque officia aut voluptatibus. Ullam, quasi reiciendis! Dolore ab atque similique sed veniam, laboriosam ut, modi eius dicta aliquid tempore et iste, sint illum quo architecto dolor fugit. Commodi eius consequuntur explicabo eum?</p>
+                    </section>
+                    <!-- END OF - FIREBASE OUTDOOR SECTION. -->         
+                    <hr>
+
+                    <h3>So you want to go out on: <br><span id="date-span"></span> at <span id="time-span"></span>...<br>
+                        Find an event to go out with that lucky person!</h3>
+
+                    <!-- Outdoor form: -->
+                    <form action="submit" id="outdoor-form">
+                        <!-- Choose type of event: -->
+                        <label for="eventType">Choose the type of event:</label>
+                        <select name="eventType" id="date-event-type">
+                            <option value="choose-one" >Chooose one:</option>                
+                            <option value="KZFzniwnSyZfZ7v7nE" genre="Sports" class="eventTypeClass">Sports</option>
+                            <option value="KZFzniwnSyZfZ7v7nJ" genre="Music" class="eventTypeClass">Music</option>
+                            <option value="KZFzniwnSyZfZ7v7na" genre="Arts & Theater" class="eventTypeClass">Arts & Theater</option>
+                        </select>
+                        <br>
+
+                        <!-- Number of events displayed: -->
+                        <label for="event-number">Choose number options to display:</label>
+                        <select name="event-number" id="event-number">  
+                            <option value="1">1</option>                      
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="40">40</option>
+                        </select>
+                        <br>
+                        
+
+                        <input type="submit" id="submit-outdoor" value="Search">
+                    </form>
+                    <hr>
+
+                    <!-- Div to append API responses: -->
+                    <div id="outdoorApiContentDiv"></div>
+
+
+                </section>
+            <!-- END OF - OUTDOOR API SECTION-->
+
+    </div> <!-- END OF - HUGE MAIN DIV-->          
+
 
     <!-- START OF - FOOTER -->
     <footer>
         <p>FLOAT&#174;</p>
         <p></p><span id="current-year-footer"></span> &copy; Copyright</p>
     </footer>
-
-
-
 
 
 <!-- Link to Javascript CDN -->
