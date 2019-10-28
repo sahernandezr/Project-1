@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date Planner</title>
+
+</head>
+<body>    
+
+    <!-- Main Title -->
+    <h1>Date Planner</h1>
+    <h3>Plan the perfect date!</h3>
+
+    <!-- START OF -  FIRST INPUT SECTION: -->
+        <section id="main-section">
+
+            <form action="submit" id="main-form">
+
+                <!-- Choose your date: -->
+                <label for="date">Choose your date:*</label>
+                <input type="date" name="date" id="date-day">
+                <br>
+
+                <!-- Choose your hour: -->
+                <label for="time">Choose your time:*</label>
+                <input type="time" name="time" id="date-time">
+                <br>
+
+                <!-- Choose of city: -->
+                <label for="cityType">Choose your city:*</label>
+                <select name="cityType" id="date-city">
+                    <option value="choose-one" >Chooose one:</option>                
+                    <option value="402" >Mexico City</option>
+                    <option value="404" >Guadalajara</option>
+                    <option value="403" >Monterrey</option>
+                </select>
+                <br>
+
+                <!-- Choose of event: -->
+                <label for="eventType">Choose your type of outdoor date:*</label>
+                <select name="eventType" id="date-type">
+                    <option value="choose-one" >Chooose one:</option>                
+                    <option value="indoor">indoor</option>
+                    <option value="outdoor">outdoor</option>
+                </select>
+            </form>
+            <br>
+
+            <!-- Input button-one -->
+            <input type="submit" id="submit-one" value="Search">
+            <hr>
+
+        </section>
+    <!-- END OF - FIRST INPUT SECTION -->
+
+
+
+
+    <!-- START OF - INDOOR API SECTION: -->
+        <section id="indoor-section">
+
+            <!-- Back to main page button: -->
+            <input type="submit" id="back-to-main-page-indoor" value="Back to main page">
+    
+            <!-- Clear searches button: -->
+            <input type="submit" id="clear-searches-indoor" value="Clear searches"> 
+            <hr>
+
+            <h3>So you want to stay indoors...<br>
+                Find a movie to watch and get cosy with that lucky person!</h3>
+  
+
+            <form action="submit" id="indoor-form">
+
+                <!-- Choose genre of movie to watch: -->
+                <label for="movieGenre">What genre of movie would you like to watch?</label>
+                <select name="movieGenre" id="movie-genre">
+                    <option value="choose-one" >Chooose one:</option>                
+                    <option value="-!5475" genre="comedy" class="movieGenre">Comedy</option>
+                    <option value="-!1255" genre="drama" class="movieGenre">Drama</option>
+                    <option value="-!1365" genre="action" class="movieGenre">Action</option>
+                    <option value="-!8711" genre="horror" class="movieGenre">Horror</option>
+                </select>
+                <br>
+
+                <!-- Enter an actor or director name: -->
+                <label for="">Enter the name of an actor you would like to watch:</label>
+                <input type="text" id="actor"><br>
+
+                <label for="">Enter a keyword for a movie you would like to find:</label>
+                <input type="text" id="keyword"><br>
+
+                <input type="submit" value="Search" id="submit-indoor">
+                <hr>
+
+            </form>
+
+            <!-- Div to append API responses: -->
+            <div id="indoorApiContentDiv"></div>
+
+        </section>
+    <!-- END OF - INDOOR API SECTION-->
+
+
+
+
+    <!-- START OF - OUTDOOR API SECTION: -->
+        <section id="outdoor-section">
+
+            <!-- Back to main page button: -->
+            <input type="submit" id="back-to-main-page-outdoor" value="Back to main page"> 
+
+            <!-- Clear searches button: -->
+            <input type="submit" id="clear-searches-outdoor" value="Clear searches"> 
+            <hr>
+
+            <h3>So you want to go out on: <br><span id="date-span"></span> at <span id="time-span"></span>...<br>
+                Find an event to go out with that lucky person!</h3>
+
+            <!-- Outdoor form: -->
+            <form action="submit" id="outdoor-form">
+                <!-- Choose type of event: -->
+                <label for="eventType">Choose the type of event:</label>
+                <select name="eventType" id="date-event-type">
+                    <option value="choose-one" >Chooose one:</option>                
+                    <option value="KZFzniwnSyZfZ7v7nE" genre="Sports" class="eventTypeClass">Sports</option>
+                    <option value="KZFzniwnSyZfZ7v7nJ" genre="Music" class="eventTypeClass">Music</option>
+                    <option value="KZFzniwnSyZfZ7v7na" genre="Arts & Theater" class="eventTypeClass">Arts & Theater</option>
+                </select>
+                <br>
+
+                <!-- Number of events displayed: -->
+                <label for="event-number">Choose number options to display:</label>
+                <select name="event-number" id="event-number">  
+                    <option value="1">1</option>                      
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="40">40</option>
+                </select>
+                <br>
+                
+
+                <input type="submit" id="submit-outdoor" value="Search">
+            </form>
+            <hr>
+
+
+
+
+            <!-- Div to append API responses: -->
+            <div id="outdoorApiContentDiv"></div>
+
+        </section>
+    <!-- END OF - OUTDOOR API SECTION-->
+
+
+<!-- Link to Javascript CDN -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+</script>
+
+<!-- Link to Moment.js CDN -->
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+<!-- Link to personal code -->
+<script src="script.js"></script>
+</body>
+</html>
