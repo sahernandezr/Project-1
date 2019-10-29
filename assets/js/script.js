@@ -247,18 +247,22 @@ $(function(){
 
       // START OF - OUTDOOR CLICK ON "BACK TO MAIN PAGE" BUTTON:
       $("#back-to-main-page-outdoor").on("click", function(){
-        event.preventDefault();
-        eventDivOutdoors = $("#outdoorApiContentDiv").empty();
         $("#main-form").get(0).reset();
         $("#main-section").show().animate({opacity: 100.0,}, 1);
         $("#outdoor-section").animate({opacity: 0.0,}, 1).hide();
+        eventDivOutdoors = $("#outdoorApiContentDiv").empty();
+        $("#outdoorApiContentDiv").empty();
+        dateCity = $("#date-city").val();
+        dateType = $("#date-event-type").val();
       });// END OF - OUTDOOR CLICK ON "BACK TO MAIN PAGE" BUTTON.
 
       // START OF - OUTDOOR CLICK ON "CLEAR SEARCHES" BUTTON:
       $("#clear-searches-outdoor").on("click", function(){
         event.preventDefault();
         eventDivOutdoors = $("#outdoorApiContentDiv").empty();
+        $("#outdoorApiContentDiv").empty();
         $("#outdoor-form").get(0).reset();
+        dateType = $("#date-event-type").val();
       });// END OF - OUTDOOR CLICK ON "CLEAR SEARCHES" BUTTON.
 
       // START OF - OUTDOOR CLICK ON "SHOW HISTORY" BUTTON:
@@ -282,6 +286,7 @@ $(function(){
       $("#submit-outdoor").on("click", function(){
           event.preventDefault();
           eventDivOutdoors = $("#outdoorApiContentDiv").empty();
+          $("#outdoorApiContentDiv").empty();
 
           // LOCAL "OUTDOOR API SECTION" VARIABLES:
           var dateType = $("#date-event-type").val();
@@ -318,6 +323,8 @@ $(function(){
             }).then(function(response){
               $("#outdoorApiContentDiv").prepend(dateTypeText); 
             
+              var resultsEventDiv = $("<div>");
+
               // START OF - LOOP TO ADD "OUTDOOR API SECTION" AJAX RESPONSES:
               for(var i = 0; i < response._embedded.events.length-1; i++){
                 
@@ -325,6 +332,7 @@ $(function(){
                   var eventGenre = response._embedded.events[i].classifications[0].genre.name;
                   var eventDateText = response._embedded.events[i].dates.start.localDate;
                   var eventTimeText = response._embedded.events[i].dates.start.localTime;
+                  var eventCity = response._embedded.events[i]._embedded.venues[0].city.name;
                   var eventVenue = response._embedded.events[i]._embedded.venues[0].name;
                   var eventImage = response._embedded.events[i].images[0].url;
                   var eventURL = response._embedded.events[i].url;
@@ -333,21 +341,52 @@ $(function(){
                   console.log(eventGenre);
                   console.log(eventDateText);
                   console.log(eventTimeText);
+                  console.log(eventCity);                  
                   console.log(eventVenue);
                   console.log(eventImage);
                   console.log(eventURL);
 
-                  var eventDivOutdoors = $("<div><b>Event name: </b>" + JSON.stringify(eventName) + "</div>");
-                  eventDivOutdoors.append($("<div><b>Event genre: </b>" + JSON.stringify(eventGenre) + "</div>"));
-                  eventDivOutdoors.append($("<div><b>Event Date: </b>" + JSON.stringify(eventDateText) + "</div>"));
-                  eventDivOutdoors.append($("<div><b>Event genre: </b>" + JSON.stringify(eventTimeText) + "</div>"));
-                  eventDivOutdoors.append($("<div><b>Event venue: </b>" + JSON.stringify(eventVenue) + "</div>"));
-                  eventDivOutdoors.append($("<div><img src='" + eventImage + "'></div>"));
-                  eventDivOutdoors.append($("<div><b>Event URL: </b><a href="+JSON.stringify(eventURL)+">" + JSON.stringify(eventURL) + "</a></div><br>"));
+                  //THE CARD DIV
+                  var cardEvent = $("<div>");
+                  cardEvent.addClass("card");
+                  //CARD'S IMAGE DIV
+                  var cardEventImage = $("<div>");
+                  cardEventImage.addClass("card-image");
+                  cardEventImage.html("<img class='activator' src='" + response._embedded.events[i].images[0].url + "'>")
+                  //CARD'S CONTENT DIV
+                  var cardEventContent = $("<div>");
+                  cardEventContent.addClass("card-content");
+                  //CARD TITLE 
+                  var cardEventTitle = $("<span>");
+                  cardEventTitle.addClass("card-title activator grey-text text-darken-4");
+                  cardEventTitle.html(response._embedded.events[i].name + "<i class='material-icons right'>more_vert</i>" + "<p><a href='"+response._embedded.events[i].url+"' target='_blank'>Go to the event</a></p>");
+                 //CARD REVEAL 
+                 var cardEventReveal = $("<div>");
+                  cardEventReveal.addClass("card-reveal");
+                  var cardEventTitleReveal = $("<span>");
+                  cardEventTitleReveal.addClass("card-title activator grey-text text-darken-4");
+                  cardEventTitleReveal.html(response._embedded.events[i].name+"<i class='material-icons right'>close</i>" + "<p>Genre: "+response._embedded.events[i].classifications[0].genre.name +"<p>Date: "+response._embedded.events[i].dates.start.localDate+"<p>Starting time: "+response._embedded.events[i].dates.start.localTime+"<p>Venue: "+response._embedded.events[i]._embedded.venues[0].name);
+
+                  (resultsEventDiv).append(cardEvent);
+                  (cardEvent).append(cardEventImage);
+                  (cardEvent).append(cardEventContent);
+                  (cardEventContent).append(cardEventTitle);
+                  (cardEvent).append(cardEventReveal);
+                  (cardEventReveal).append(cardEventTitleReveal);
+
+
+                  // var eventDivOutdoors = $("<div><b>Event name: </b>" + JSON.stringify(eventName) + "</div>");
+                  // eventDivOutdoors.append($("<div><b>Event genre: </b>" + JSON.stringify(eventGenre) + "</div>"));
+                  // eventDivOutdoors.append($("<div><b>Event Date: </b>" + JSON.stringify(eventDateText) + "</div>"));
+                  // eventDivOutdoors.append($("<div><b>Event genre: </b>" + JSON.stringify(eventTimeText) + "</div>"));
+                  // eventDivOutdoors.append($("<div><b>Event venue: </b>" + JSON.stringify(eventVenue) + "</div>"));
+                  // eventDivOutdoors.append($("<div><img src='" + eventImage + "'></div>"));
+                  // eventDivOutdoors.append($("<div><b>Event URL: </b><a href="+JSON.stringify(eventURL)+">" + JSON.stringify(eventURL) + "</a></div><br>"));
                   
-                  $("#outdoorApiContentDiv").append(eventDivOutdoors); 
+                  
 
               }// END OF - LOOP TO ADD "OUTDOOR API SECTION" AJAX RESPONSES.
+              $("#outdoorApiContentDiv").append(resultsEventDiv); 
               $("#outdoorApiContentDiv").append("<hr>"); 
             });// END OF - "OUTDOOR API SECTION" AJAX.
           }); // END OF - SUBMIT BUTTON CODE FOR "OUTDOOR API SECTION"
