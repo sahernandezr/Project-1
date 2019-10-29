@@ -28,6 +28,26 @@ $(function(){
   // END OF - HIDE INDOOR AND OUTDOOR API SECTIONS AND ABOUT.
 
 
+  // START OF - INITIALIZE FIREBASE FOR OUTDOOR API:
+      // WEB APP'S FIREBASE CONFIGURATION
+        var firebaseConfig = {
+          apiKey: "AIzaSyD_poFB4RCwt_ZhS9P8DeYKRD-E4h5TLZI",
+          authDomain: "project-1-float.firebaseapp.com",
+          databaseURL: "https://project-1-float.firebaseio.com",
+          projectId: "project-1-float",
+          storageBucket: "project-1-float.appspot.com",
+          messagingSenderId: "780323326546",
+          appId: "1:780323326546:web:df1b048bdeaa6c937eed8b",
+          measurementId: "G-N390YHMW89"
+        };
+
+        // INITIALIZE FIREBASE:
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+  // END OF - INITIALIZE FIREBASE FOR OUTDOOR API.
+
+
+
   // START OF - CLICK ON "ABOUT" BUTTON:
   $("#about").on("click", function(){
     event.preventDefault();
@@ -383,12 +403,75 @@ $(function(){
                   // eventDivOutdoors.append($("<div><img src='" + eventImage + "'></div>"));
                   // eventDivOutdoors.append($("<div><b>Event URL: </b><a href="+JSON.stringify(eventURL)+">" + JSON.stringify(eventURL) + "</a></div><br>"));
                   
-                  
+              // START OF - FIREBASE CODE FOR OUTDOOR API IN LOOP:
+  
+                  // GRAB SEARCH INPUT:
+                  var eventDateFire = eventDateText;
+                  var eventGenreFire = eventGenre;
+                  var eventTitleFire = eventName;
+                  var eventCityFire = eventCity;
+                  var eventVenueFire = eventVenue;
+                    
+                  // LOCAL "TEMPORARY" OBJECT" FOR HOLDING DATA:
+                  var newRegistry = {
+                    date: eventDateFire,
+                    genre: eventGenreFire,
+                    title: eventTitleFire,
+                    city: eventCityFire,
+                    venue: eventVenueFire,
+                  };
 
-              }// END OF - LOOP TO ADD "OUTDOOR API SECTION" AJAX RESPONSES.
+                  // UPLOAD NEWREGISTRY TO DATABASE:
+                  database.ref().push(newRegistry);
+              // END OF - FIREBASE CODE FOR OUTDOOR API IN LOOP.
+
+                }// END OF - LOOP TO ADD "OUTDOOR API SECTION" AJAX RESPONSES.
+                
+
+              // START OF - FIREBASE CODE EVENT:
+              database.ref().on("child_added", function(childSnapshot) {
+                  console.log(childSnapshot.val());
+                
+                  // STORE DATABASE INPUT INTO A VARIABLE
+                  var eventDateFireLocal = childSnapshot.val().date;
+                  var eventGenreFireLocal = childSnapshot.val().genre;
+                  var eventTitleFireLocal = childSnapshot.val().title;
+                  var eventCityFireLocal = childSnapshot.val().city;
+                  var eventVenueFireLocal = childSnapshot.val().venue;
+
+                  console.log(eventDateFireLocal);
+                  console.log(eventGenreFireLocal);
+                  console.log(eventTitleFireLocal);
+                  console.log(eventCityFireLocal);
+                  console.log(eventVenueFireLocal);
+              
+            
+                  //  CREATE NEW ROW IN HTML TABLE
+                  var newRow = $("<tr>").append(
+                    $("<td>").text(eventDateFireLocal),
+                    $("<td>").text(eventGenreFireLocal),
+                    $("<td>").text(eventTitleFireLocal),
+                    $("<td>").text(eventCityFireLocal),
+                    $("<td>").text(eventVenueFireLocal),
+                  );
+
+                  // APPEND NEW ROW TO TABLE
+                  $("#history-table-body").append(newRow);
+              });// END OF - FIREBASE CODE EVENT.
+
+
+
+
               $("#outdoorApiContentDiv").append(resultsEventDiv); 
               $("#outdoorApiContentDiv").append("<hr>"); 
             });// END OF - "OUTDOOR API SECTION" AJAX.
+
+
+
+
+
+
+
           }); // END OF - SUBMIT BUTTON CODE FOR "OUTDOOR API SECTION"
   // OUTDOOR DATE SECTION - END.
 
