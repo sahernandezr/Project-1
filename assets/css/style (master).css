@@ -1,0 +1,22 @@
+/* body{
+    background-color: #ff0049;
+} */
+
+#main-logo{
+    height: 100px;
+}
+
+.team-image{
+    height: 100px;
+}
+
+.team-personal-div{
+    width: 250px;
+    display: inline;
+    float: left;
+}
+
+#hr1{
+    display: block;
+    width: 100%;
+}
