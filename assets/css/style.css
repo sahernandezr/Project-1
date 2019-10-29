@@ -81,3 +81,10 @@ select {
   display: block;
   width: 100%;
 }
+
+.card {
+  width: 26% !important;
+  display: inline-block !important;
+  padding: 0 15px;
+  border: 0;
+ }
