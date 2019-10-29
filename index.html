@@ -4,20 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Float - Date Planner</title>
+    <link rel='icon' href='assets/images/Float-favicon.png' type='image/x-icon'/ >
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>    
 
-    <!-- Compiled and minified JavaScript/ Materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <!-- Font Awsome -->
-    <script src="https://kit.fontawesome.com/567f3f1abf.js" crossorigin="anonymous"></script>
 
-                
-
+<<<<<<< HEAD
     <title>Project One</title>
 </head>
 <body>
@@ -90,36 +84,208 @@
                     <button class="btn waves-effect waves-light submitBtn" id="submit-one" type="submit" name="action">Submit
                         <i class="material-icons right">send</i>
                     </button>
-                    </div>
-            
-                <!-- Indoors or Outdoors-->
-                    <div class="col s12 m4">
-                      <div class="icon-block">
-                        <h2 class="center brown-text"><i class="material-icons">home / local_bar</i></h2>
-                        <h5 class="center">Preference</h5>
-            
-                        <p class="light">Would you prefer an Outdoors or Indoors date?</p>
-                        <p>
-                          <!-- Checkbox -->
-                            <label>
-                                <input id="indeterminate-checkbox" class="indoor" type="checkbox" />
-                                <span>Indoors</span>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                                <input id="indeterminate-checkbox" class="outdoor" type="checkbox" />
-                                <span>Outdoors</span>
-                            </label>
-                        </p>
-                      </div>
-                    </div>
-                
-                  </div>
-            
-                </div>
-              </div>
+=======
+    <!--START OF - NAV BAR: -->
+    <nav>
+        <!-- This is the "about" button: -->
+        <input type="submit" id="about" value="about"></input>
 
+        <!-- This is the "hide about" button: -->
+        <input type="submit" id="hide-about" value="hide-about"></input>
+    
+    </nav><!--END OF - NAV BAR: -->
+    <br>
+
+
+    <!-- MAIN TITLE -->
+    <img src="assets/images/FloatLogo.png" id="main-logo">
+    <h3>Let yourself go and plan a great date!</h3>
+    <hr>
+
+            <!-- START OF - DIV THAT CONTAINS "ABOUT" DETAILS: -->
+            <div id="about-div">
+                <!-- This div contains details about float -->
+                <div id="float-div">
+                    <h2>About float:</h2>
+                    <p>Float helps you plan the perfect date, whether you're looking to set a cozy mood inside or feeling adventurous and want to go out and explore the city!</p>
+                </div>
+    
+                <!-- START OF - DIV THAT CONTAINS TEAM'S DETAILS: -->
+                <div id="team-div">
+                    <h2>About our team:</h2>
+    
+                    <!-- Froy -->
+                    <div class="team-personal-div">
+                        <img class="team-image" src="assets/images/Team/Froylan.png" alt="Froylan">
+                        <h3>Froylan Pérez</h3>
+                        <p>Froylan is one of our team's outdoor API master planner and coder.</p>
+                    </div>
+                    <!-- Sandra -->
+                    <div class="team-personal-div">
+                        <img class="team-image" src="assets/images/Team/Sandra.png" alt="Sandra">
+                        <h3>Sandra Hernández</h3>
+                        <p>Sandra is our team's indoor API specialist and coder.</p>
+                    </div>
+                    <!-- Miguel -->
+                    <div class="team-personal-div">
+                        <img class="team-image" src="assets/images/Team/Miguel.png" alt="Miguel">
+                        <h3>Miguel Santa María</h3>
+                        <p>Miguel is our user experience interface specialist and coder.</p>
+                    </div>
+                    <!-- Humberto -->
+                    <div class="team-personal-div">
+                        <img class="team-image" src="assets/images/Team/Humberto.png" alt="Humberto">
+                        <h3>Humberto Gómez</h3>
+                        <p>Humberto is one of our team's outdoor API master planner, database specialist and coder.</p>
+>>>>>>> d00577ca9a34e80e7321eae5057952b40bc0f430
+                    </div>
+                </div><!-- END OF - DIV THAT CONTAINS TEAM'S DETAILS. -->
+                <hr id="hr1">
+            </div> <!-- END OF -DIV THAT CONTAINS "ABOUT" DETAILS. -->
+
+    <!-- START OF -  FIRST INPUT SECTION: -->
+        <section id="main-section">
+
+            <form action="submit" id="main-form">
+
+                <!-- Choose your date: -->
+                <label for="date">Choose your date:*</label>
+                <input type="date" name="date" id="date-day">
+                <br>
+
+                <!-- Choose your hour: -->
+                <label for="time">Choose your time:*</label>
+                <input type="time" name="time" id="date-time">
+                <br>
+
+                <!-- Choose of city: -->
+                <label for="cityType">Choose your city:*</label>
+                <select name="cityType" id="date-city">
+                    <option value="choose-one" >Chooose one:</option>                
+                    <option value="402" >Mexico City</option>
+                    <option value="404" >Guadalajara</option>
+                    <option value="403" >Monterrey</option>
+                </select>
+                <br>
+
+                <!-- Choose of event: -->
+                <label for="eventType">Choose your type of outdoor date:*</label>
+                <select name="eventType" id="date-type">
+                    <option value="choose-one" >Chooose one:</option>                
+                    <option value="indoor">indoor</option>
+                    <option value="outdoor">outdoor</option>
+                </select>
+            </form>
+            <br>
+
+            <!-- Input button-one -->
+            <input type="submit" id="submit-one" value="Search">
+            <hr>
+
+        </section>
+    <!-- END OF - FIRST INPUT SECTION -->
+
+
+
+
+    <!-- START OF - INDOOR API SECTION: -->
+        <section id="indoor-section">
+
+            <!-- Back to main page button: -->
+            <input type="submit" id="back-to-main-page-indoor" value="Back to main page">
+    
+            <!-- Clear searches button: -->
+            <input type="submit" id="clear-searches-indoor" value="Clear searches"> 
+            <hr>
+
+            <h3>So you want to stay indoors...<br>
+                Find a movie to watch and get cosy with that lucky person!</h3>
+  
+
+            <form action="submit" id="indoor-form">
+
+                <!-- Choose genre of movie to watch: -->
+                <label for="movieGenre">What genre of movie would you like to watch?</label>
+                <select name="movieGenre" id="movie-genre">
+                    <option value="choose-one" >Chooose one:</option>                
+                    <option value="-!5475" genre="comedy" class="movieGenre">Comedy</option>
+                    <option value="-!1255" genre="drama" class="movieGenre">Drama</option>
+                    <option value="-!1365" genre="action" class="movieGenre">Action</option>
+                    <option value="-!8711" genre="horror" class="movieGenre">Horror</option>
+                </select>
+                <br>
+
+                <!-- Enter an actor or director name: -->
+                <label for="">Enter the name of an actor you would like to watch:</label>
+                <input type="text" id="actor"><br>
+
+                <label for="">Enter a keyword for a movie you would like to find:</label>
+                <input type="text" id="keyword"><br>
+
+                <input type="submit" value="Search" id="submit-indoor">
+                <hr>
+
+            </form>
+
+            <!-- Div to append API responses: -->
+            <div id="indoorApiContentDiv"></div>
+
+        </section>
+    <!-- END OF - INDOOR API SECTION-->
+
+
+
+
+    <!-- START OF - OUTDOOR API SECTION: -->
+        <section id="outdoor-section">
+
+            <!-- Back to main page button: -->
+            <input type="submit" id="back-to-main-page-outdoor" value="Back to main page"> 
+
+            <!-- Clear searches button: -->
+            <input type="submit" id="clear-searches-outdoor" value="Clear searches"> 
+            <hr>
+
+            <!-- Show history button: -->
+            <input type="submit" id="show-history-outdoor" value="Show history"> 
+
+            <!-- Hide history button: -->
+            <input type="submit" id="hide-history-outdoor" value="Hide history"> 
+            
+            <!-- START OF - FIREBASE OUTDOOR SECTION: -->
+            <section id="firebase-section" >
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, nisi commodi? Perspiciatis magni accusantium cum ut? Sit quas nostrum aspernatur maiores optio illo ab. Animi a adipisci ex vero nobis nam illum beatae esse excepturi maiores doloremque cum minima repellendus accusantium sit, alias facere tenetur quos accusamus incidunt? Tenetur atque dolorum, consequatur ducimus ab error similique placeat laudantium dignissimos porro ipsa, quaerat sint vitae commodi nihil illum, ullam laboriosam vel. Facere alias voluptatum assumenda ratione! Saepe molestias culpa temporibus officia similique. Quae iure enim placeat nihil incidunt, ipsam vitae molestiae maxime veritatis corrupti voluptatibus quas quo deleniti doloribus aliquam magnam tempora doloremque eius quam laboriosam accusantium? Ut omnis impedit illum, eligendi fugiat minus, accusamus molestiae facere porro deserunt veritatis voluptatem beatae reprehenderit dolorum. Quam incidunt quisquam delectus labore at earum amet corporis cumque harum fugiat aliquam, ad itaque sapiente atque expedita, explicabo necessitatibus facilis exercitationem, blanditiis illo. Ea eveniet quo laboriosam nam distinctio eius quam maiores, quisquam at eaque, corrupti architecto harum, perferendis reprehenderit suscipit sequi sapiente itaque officia aut voluptatibus. Ullam, quasi reiciendis! Dolore ab atque similique sed veniam, laboriosam ut, modi eius dicta aliquid tempore et iste, sint illum quo architecto dolor fugit. Commodi eius consequuntur explicabo eum?</p>
+            </section>
+            <!-- END OF - FIREBASE OUTDOOR SECTION. -->         
+            <hr>
+
+            <h3>So you want to go out on: <br><span id="date-span"></span> at <span id="time-span"></span>...<br>
+                Find an event to go out with that lucky person!</h3>
+
+            <!-- Outdoor form: -->
+            <form action="submit" id="outdoor-form">
+                <!-- Choose type of event: -->
+                <label for="eventType">Choose the type of event:</label>
+                <select name="eventType" id="date-event-type">
+                    <option value="choose-one" >Chooose one:</option>                
+                    <option value="KZFzniwnSyZfZ7v7nE" genre="Sports" class="eventTypeClass">Sports</option>
+                    <option value="KZFzniwnSyZfZ7v7nJ" genre="Music" class="eventTypeClass">Music</option>
+                    <option value="KZFzniwnSyZfZ7v7na" genre="Arts & Theater" class="eventTypeClass">Arts & Theater</option>
+                </select>
+                <br>
+
+                <!-- Number of events displayed: -->
+                <label for="event-number">Choose number options to display:</label>
+                <select name="event-number" id="event-number">  
+                    <option value="1">1</option>                      
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="40">40</option>
+                </select>
+                <br>
+                
+
+<<<<<<< HEAD
               <!-- API DIVS GO DOWN HERE INSIDE THE HIDE DIV -->
               <div class="hide">
                 <!-- TICKETMASTER GOES HERE -->
@@ -182,5 +348,37 @@
     <script src="assets/js/init.js"></script>
     <!-- Javascript -->
     <script src="assets/javascript/script.js"></script>
+=======
+                <input type="submit" id="submit-outdoor" value="Search">
+            </form>
+            <hr>
+
+            <!-- Div to append API responses: -->
+            <div id="outdoorApiContentDiv"></div>
+
+
+        </section>
+    <!-- END OF - OUTDOOR API SECTION-->
+
+    <!-- START OF - FOOTER -->
+    <footer>
+        <p>FLOAT&#174;</p>
+        <p></p><span id="current-year-footer"></span> &copy; Copyright</p>
+    </footer>
+
+
+
+
+
+<!-- Link to Javascript CDN -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+</script>
+
+<!-- Link to Moment.js CDN -->
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+<!-- Link to personal code -->
+<script src="assets/js/script.js"></script>
+>>>>>>> d00577ca9a34e80e7321eae5057952b40bc0f430
 </body>
 </html>
