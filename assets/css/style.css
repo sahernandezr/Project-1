@@ -1,26 +1,9 @@
-<<<<<<< HEAD
 body{
-    background-color: #ff0049;
-}
-
-nav{
-    text-align: center;
-}
-
-#huge-main-div{
-    width: 1000px;
-    margin: 0px auto;
-    text-align: center;
     background-color: #ff0049;
 }
 
 #main-logo{
     height: 100px;
-}
-
-#about-float-p{
-    width: 500px;
-    margin: 0px auto;
 }
 
 .team-image{
@@ -36,13 +19,4 @@ nav{
 #hr1{
     display: block;
     width: 100%;
-}
-
-footer{
-    text-align: center;
-    color: white;
-}
-
-#remove{
-    color: white;
 }
