@@ -126,7 +126,6 @@ $(function(){
         // LOCAL "INDOOR API SECTION" VARIABLES:
         var movieGenre = $("#movie-genre").val();
         console.log(movieGenre);
-        var actor =  $("#actor").val().trim();
         var keyword= $("#keyword").val().trim();
 
         var keywordtosearch = "q="+ keyword.replace(" ", "%20");
@@ -137,7 +136,6 @@ $(function(){
         var startimdbrating = "-!0%2C" ;
         var endimdbrating = "10" ;
         var country= "&cl=65"; //65 is Mexico code in the catalogue
-        var actortosearch = "&person:"+ actor.replace(" ", "%20");
         var initialquery= "https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?";
         var movieGenreText = " ";
 
@@ -167,48 +165,75 @@ $(function(){
       // END OF - SWITCH FUNCTION TO INCLUDE TITLE OF "MOVIE GENRE".
 
 
-        // START OF - API QUERY SETTINGS:
-        var movieUrl = initialquery + keywordtosearch + actortosearch + startyear + endyear + startnetflixrating + endnetflixrating + startimdbrating + endimdbrating+ movieGenre +"-!Movie-!English-!English-!gt1-!%7Bdownloadable%7D&t=ns"+ country +"&st=adv&ob=Relevance&p=1&sa=or";
-        var settings = {
-          "async": true,
-          "crossDomain": true,
-          "url": movieUrl,
-          "method": "GET",
-          "headers": {
-            "x-rapidapi-host": "unogs-unogs-v1.p.rapidapi.com",
-            "x-rapidapi-key": "2ebcf5d486msh29d6931fbf5be12p1a81b7jsna6669150f38d"
-          },
-        };// END OF - API QUERY SETTINGS.
-        console.log(movieUrl);
-        // START OF - INDOOR API AJAX:
-        $.ajax(settings).then(function (response) {
-            console.log(response);
-            $("#indoorApiContentDiv").prepend(movieGenreText); 
-          
-          var results = response.ITEMS;
-          
-          // START OF - INDOOR AJAX LOOP:
-          for (var i = 0; i < 11; i++) {
-          
-            var movieTitle = results[i].title;
-            var movieImage = results[i].image;
-            var movieSynopsis = results[i].synopsis;
-            var movieNetflixId = results[i].netflixid;
+      // START OF - API QUERY SETTINGS:
+      var movieUrl = initialquery + keywordtosearch + startyear + endyear + startnetflixrating + endnetflixrating + startimdbrating + endimdbrating + movieGenre + "-!Movie-!English-!English-!gt100-!%7Bdownloadable%7D&t=ns" + country + "&st=adv&ob=Relevance&p=1&sa=or";
 
-            console.log(movieTitle);
-            console.log(movieImage);
-            console.log(movieSynopsis);
-            console.log(movieNetflixId);
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": movieUrl,
+        "method": "GET",
+        "headers": {
+          "x-rapidapi-host": "unogs-unogs-v1.p.rapidapi.com",
+          "x-rapidapi-key": "2ebcf5d486msh29d6931fbf5be12p1a81b7jsna6669150f38d"
+        }
+      }// END OF - API QUERY SETTINGS.
+      console.log(movieUrl);
 
-            var cardMovie = $("<div class='card'></div>")
-            cardMovie.append("<div><b>Title: </b>"+movieTitle+"</div>");
-            cardMovie.append("<img src="+movieImage+">");
-            cardMovie.append("<div><b>Synopsis: </b>"+movieSynopsis+"</div>");
-            cardMovie.append("<div><button><a href='https://www.netflix.com/title/"+movieNetflixId+"'target='_blank'>Watch it now</button></div><br>");
-            $("#indoorApiContentDiv").append(cardMovie);
-          }// END OF - INDOOR AJAX LOOP:
-          $("#indoorApiContentDiv").append("<hr>"); 
-        }); // END OF - INDOOR API AJAX.
+      // START OF - INDOOR API AJAX:
+      $.ajax(settings).then(function (response) {
+        console.log(response);
+        $("#indoorApiContentDiv").empty();
+        $("#indoorApiContentDiv").prepend(movieGenreText);
+
+        var results = response.ITEMS;
+        var resultsdiv = $("<div>");
+
+        // START OF - INDOOR AJAX LOOP:
+        for (var i = 0; i < results.length - 1; i++) {
+
+          // var movieTitle = results[i].title;
+          // var movieImage = results[i].image;
+          // var movieSynopsis = results[i].synopsis;
+          // var movieNetflixId = results[i].netflixid;
+
+          // console.log(movieTitle);
+          // console.log(movieImage);
+          // console.log(movieSynopsis);
+          // console.log(movieNetflixId);
+
+          //THE CARD DIV
+          var cardmovie = $("<div>");
+          cardmovie.addClass("card");
+          //CARD'S IMAGE DIV
+          var cardmovieImage = $("<div>");
+          cardmovieImage.addClass("card-image");
+          cardmovieImage.html("<img class='activator' src='" + results[i].image + "'>");
+          //CARD'S CONTENT DIV
+          var cardmovieContent = $("<div>");
+          cardmovieContent.addClass("card-content");
+          //CARD TITLE & LINK TO NETFLIX
+          var cardmovieTitle = $("<span>");
+          cardmovieTitle.addClass("card-title activator grey-text text-darken-4");
+          cardmovieTitle.html(results[i].title + "<i class='material-icons right'>more_vert</i>" + "<p><a href='https://www.netflix.com/title/" + results[i].netflixid + "' target='_blank'>Watch it now</a></p>");
+          //CARD REVEAL (SYNOPSIS)
+          var cardmovieReveal = $("<div>");
+          cardmovieReveal.addClass("card-reveal");
+          var cardmovieTitleReveal = $("<span>");
+          cardmovieTitleReveal.addClass("card-title activator grey-text text-darken-4");
+          cardmovieTitleReveal.html(results[i].title + "<i class='material-icons right'>close</i>" + "<p>" + results[i].synopsis);
+
+
+          (resultsdiv).append(cardmovie);
+          (cardmovie).append(cardmovieImage);
+          (cardmovie).append(cardmovieContent);
+          (cardmovieContent).append(cardmovieTitle);
+          (cardmovie).append(cardmovieReveal);
+          (cardmovieReveal).append(cardmovieTitleReveal);
+        }// END OF - INDOOR AJAX LOOP:
+        $("#indoorApiContentDiv").append(resultsdiv);
+        $("#indoorApiContentDiv").append("<hr>");
+      }); // END OF - INDOOR API AJAX.
     });// END OF - SUBMIT BUTTON CODE FOR "INDOOR API SECTION":
   // INDOOR DATE SECTION - END.
 
