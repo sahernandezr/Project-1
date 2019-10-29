@@ -5,36 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Float - Date Planner</title>
-    <link rel='icon' href='assets/images/Float-favicon.png' type='image/x-icon'/ >
-    <!-- Compiled and minified CSS Materialize  *** BREAKS BOXES *** -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel='icon' href='assets/images/Float-favicon.png' type='image/x-icon'>
+    <!-- Compiled and minified CSS Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript/ Materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     
+    <!-- Font Awsome -->
+    <script src="https://kit.fontawesome.com/567f3f1abf.js" crossorigin="anonymous"></script>
 
     <!-- Personal CSS HOLDER -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
 </head>
 <body>    
 
 
     <!--START OF - NAV BAR: -->
-    <nav>
-        <!-- This is the "about" button: -->
-        <input type="submit" id="about" value="about"></input>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+          <a id="logo-container" href="#" class="brand-logo center"><img src="assets/images/FloatLogo.png" id="main-logo"></a>
+          <ul class="right hide-on-med-and-down">
+            <li> 
+                <!-- This is the "about" button: -->
+                <input type="submit" id="about" value="about" class="waves-effect waves-light btn-small"></input>
 
-        <!-- This is the "hide about" button: -->
-        <input type="submit" id="hide-about" value="hide-about"></input>
+                <!-- This is the "hide about" button: -->
+                <input type="submit" id="hide-about" value="hide-about" class="waves-effect waves-light btn-small"></input>
+            </li>
+          </ul>
     
-    </nav><!--END OF - NAV BAR: -->
-    <br>
+          <ul id="nav-mobile" class="sidenav">
+            <li>
+                <!-- This is the "about" button: -->
+                <input type="submit" id="about" value="about"></input>
 
+                <!-- This is the "hide about" button: -->
+                <input type="submit" id="hide-about" value="hide-about"></input>
+            </li>
+          </ul>
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+    <br> 
+    <!-- END OF NAVBAR -->
 
     <!-- MAIN TITLE -->
-    <img src="assets/images/FloatLogo.png" id="main-logo">
-    <h3>Let yourself go and plan a great date!</h3>
-    <hr>
 
+    <!-- Parallax Container -->
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <br><br>
+            <h1 class="header center teal-text text-lighten-2">Let yourself go</h1>
+            <div class="row center">
+              <h5 class="header col s12 light">and plan THE date!</h5>
+            </div>
+            <br><br>
+    
+          </div>
+        </div>
+        <div class="parallax"><img src="assets/images/parns1.jpg" class="banner1" alt="Unsplashed background img1"></div>
+      </div>
+      <!-- END OF PARRALLAX CONTAINER -->
             <!-- START OF - DIV THAT CONTAINS "ABOUT" DETAILS: -->
             <div id="about-div">
                 <!-- This div contains details about float -->
@@ -76,6 +112,8 @@
             </div> <!-- END OF -DIV THAT CONTAINS "ABOUT" DETAILS. -->
 
     <!-- START OF -  FIRST INPUT SECTION: -->
+    <div class="container">
+        <div class="row center-align">
         <section id="main-section">
 
             <form action="submit" id="main-form">
@@ -111,10 +149,12 @@
             <br>
 
             <!-- Input button-one -->
-            <input type="submit" id="submit-one" value="Search">
+            <input type="submit" id="submit-one" value="Search" class="waves-effect waves-light btn-large">
             <hr>
 
         </section>
+        </div>
+    </div>
     <!-- END OF - FIRST INPUT SECTION -->
 
 
@@ -225,15 +265,54 @@
         </section>
     <!-- END OF - OUTDOOR API SECTION-->
 
+    <!-- Second Image -->
+    <div class="parallax-container valign-wrapper">
+            <div class="section no-pad-bot">
+              <div class="container">
+                <div class="row center">
+                  <h5 class="header col s12 light"></h5>
+                </div>
+              </div>
+            </div>
+            <div class="parallax"><img src="assets/images/indoor1.jpg" alt="Unsplashed background img 3"></div>
+          </div>
+
     <!-- START OF - FOOTER -->
-    <footer>
-        <p>FLOAT&#174;</p>
-        <p></p><span id="current-year-footer"></span> &copy; Copyright</p>
-    </footer>
-
-
-
-
+    <footer class="page-footer teal">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Company Bio</h5>
+                  <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+        
+        
+                </div>
+                <div class="col l3 s12">
+                  <h5 class="white-text">Settings</h5>
+                  <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                  </ul>
+                </div>
+                <div class="col l3 s12">
+                  <h5 class="white-text">Connect</h5>
+                  <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+              Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">FLOAT&#174; &copy; Copyright</a>
+              </div>
+            </div>
+          </footer>
 
 <!-- Link to Javascript CDN -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
@@ -241,6 +320,10 @@
 
 <!-- Link to Moment.js CDN -->
 <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+<!--  Scripts-->
+<script src="assets/js/materialize.js"></script>
+<script src="assets/js/init.js"></script>
 
 <!-- Link to personal code -->
 <script src="assets/js/script.js"></script>

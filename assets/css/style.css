@@ -55,3 +55,29 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+
+/* Personal style */
+select {
+  display: block;
+ }
+
+ #main-logo{
+  height: 60px;
+  margin-top: 2px;
+}
+
+.team-image{
+  height: 100px;
+}
+
+.team-personal-div{
+  width: 250px;
+  display: inline;
+  float: left;
+}
+
+#hr1{
+  display: block;
+  width: 100%;
+}
