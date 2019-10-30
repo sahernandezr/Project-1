@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Float - Date Planner</title>
+
     <link rel='icon' href='assets/images/Float-favicon.png' type='image/x-icon'>
     <!-- Compiled and minified CSS Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -74,6 +75,7 @@
 
       <!-- About Container -->
       <div class="container center-align">
+
             <!-- START OF - DIV THAT CONTAINS "ABOUT" DETAILS: -->
             <div id="about-div">
                 <!-- This div contains details about float -->
@@ -83,6 +85,7 @@
                 </div>
     
                 <!-- START OF - DIV THAT CONTAINS TEAM'S DETAILS: -->
+
                 <div class="container center-align">
                     <div class="row">
                         <div id="team-div">
@@ -122,6 +125,7 @@
     <!-- START OF -  FIRST INPUT SECTION: -->
     <div class="container">
         <div class="row center-align">
+
         <section id="main-section">
 
             <form action="submit" id="main-form">
@@ -150,25 +154,30 @@
                 <label for="eventType">Choose your type of outdoor date:*</label>
                 <select name="eventType" id="date-type">
                     <option value="choose-one" >Chooose one:</option>                
+
                     <option value="indoor">Indoor</option>
                     <option value="outdoor">Outdoor</option>
+
                 </select>
             </form>
             <br>
 
             <!-- Input button-one -->
+
             <input type="submit" id="submit-one" value="Search" class="waves-effect waves-light btn-large red darken-3">
             <hr>
 
         </section>
         </div>
     </div>
+
     <!-- END OF - FIRST INPUT SECTION -->
 
 
 
 
     <!-- START OF - INDOOR API SECTION: -->
+
     <div class="container center-align">
         <section id="indoor-section">
 
@@ -177,6 +186,7 @@
     
             <!-- Clear searches button: -->
             <input type="submit" id="clear-searches-indoor" value="Clear Search" class="waves-effect waves-light btn-small red darken-3"> 
+
             <hr>
 
             <h3>So you want to stay indoors...<br>
@@ -201,7 +211,9 @@
                 <input type="text" id="keyword"><br>
 
                 <!-- Submit button: -->
+
                 <input type="submit" value="Search" id="submit-indoor" class="waves-effect waves-light btn-small red darken-3">
+
                 <hr>
 
             </form>
@@ -210,13 +222,16 @@
             <div id="indoorApiContentDiv"></div>
 
         </section>
+
     </div>
+
     <!-- END OF - INDOOR API SECTION-->
 
 
 
 
     <!-- START OF - OUTDOOR API SECTION: -->
+
     <div class="container center-align">
         <section id="outdoor-section">
 
@@ -344,6 +359,7 @@
 <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
+
 <!-- Link to Javascript CDN -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
 </script>
@@ -354,6 +370,7 @@
 <!--  Scripts-->
 <script src="assets/js/materialize.js"></script>
 <script src="assets/js/init.js"></script>
+
 
 <!-- Link to personal code -->
 <script src="assets/js/script.js"></script>
