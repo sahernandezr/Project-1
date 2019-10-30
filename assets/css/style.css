@@ -16,7 +16,47 @@ body{
     float: left;
 }
 
-#hr1{
-    display: block;
-    width: 100%;
+
+.icon-block {
+  padding: 0 15px;
 }
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+
+/* Personal style */
+select {
+  display: block;
+ }
+
+ #main-logo{
+  height: 60px;
+  margin-top: 2px;
+}
+
+.team-image{
+  height: 100px;
+}
+
+.team-personal-div{
+  width: 250px;
+  display: inline;
+  float: left;
+}
+
+#hr1{
+  display: block;
+  width: 100%;
+}
+
+.card {
+  width: 26% !important;
+  display: inline-block !important;
+  padding: 0 15px;
+  border: 0;
+ }
