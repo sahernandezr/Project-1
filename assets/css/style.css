@@ -1,21 +1,50 @@
-body{
-    background-color: #ff0049;
+
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
 }
 
-#main-logo{
-    height: 100px;
+p {
+  line-height: 2rem;
 }
 
-.team-image{
-    height: 100px;
+.sidenav-trigger {
+  color: #26a69a;
 }
 
-.team-personal-div{
-    width: 250px;
-    display: inline;
-    float: left;
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
 }
 
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
 
 .icon-block {
   padding: 0 15px;
@@ -29,9 +58,34 @@ footer.page-footer {
 }
 
 
+/* Personal style */
+select {
+  display: block;
+ }
+
+ #main-logo{
+  height: 60px;
+  margin-top: 2px;
+}
+
+.team-image{
+  height: 100px;
+}
+
+.team-personal-div{
+  width: 250px;
+  display: inline;
+  float: left;
+}
 
 #hr1{
   display: block;
   width: 100%;
 }
 
+.card {
+  width: 26% !important;
+  display: inline-block !important;
+  padding: 0 15px;
+  border: 0;
+ }
